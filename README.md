@@ -13,6 +13,7 @@ Repositorio con 28 clases progresivas de Python aplicado a automatización y an�
 - Programación Orientada a Objetos (clases, herencia)
 - pandas avanzado (merge, pivot_table)
 - Jupyter Notebook
+- Conexión a bases de datos SQL Server reales con pyodbc
 
 
 ## Proyecto destacado: Analizador de Portafolio de Inversión (clase-30 a clase-32)
