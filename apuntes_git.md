@@ -111,6 +111,24 @@ git remote -v
 
 ---
 
+## 7. Descargar un repositorio existente (`git clone`)
+
+```bash
+git clone https://github.com/usuario/nombre-repo.git
+# Descarga una copia COMPLETA de un repositorio (con todo su historial de commits)
+# desde GitHub hacia tu computador. Crea automáticamente una carpeta con el nombre
+# del repositorio, ya conectada a "origin" (no hace falta volver a hacer git remote add).
+```
+
+**¿Cuándo se usa?**
+- Cuando empiezas a trabajar en un computador nuevo y quieres traer un proyecto que ya existe en GitHub.
+- Cuando quieres tener una copia de un proyecto de otra persona (por ejemplo, para revisarlo o aportar cambios).
+- A diferencia de `git init` (que crea un repositorio nuevo desde cero, vacío), `git clone` trae uno que **ya existe**, completo, listo para usar.
+
+**Importante:** GitHub solo guarda y muestra el código — no lo ejecuta. Para correr un script de Python que está en GitHub, siempre hay que traerlo primero a un lugar con Python instalado (tu computador, un servidor, etc.), normalmente con `git clone`.
+
+---
+
 ## Resumen visual: los 3 "estados" de Git
 
 ```
@@ -127,3 +145,4 @@ Directorio de trabajo  --git add-->  Área de preparación  --git commit-->  His
 - El `.gitignore` se configura **antes** de subir nada sensible, nunca después.
 - Si expones una contraseña por error en un commit ya subido, lo más seguro es **cambiar esa contraseña**, no solo borrar el archivo.
 - `git push` sin nada más (sin `-u origin master`) solo funciona después de haber hecho esa conexión inicial una vez.
+- `git clone` es para TRAER un repositorio que ya existe; `git init` es para CREAR uno nuevo desde cero.
