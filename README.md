@@ -14,6 +14,7 @@ Repositorio con 28 clases progresivas de Python aplicado a automatización y an�
 - pandas avanzado (merge, pivot_table)
 - Jupyter Notebook
 - Conexión a bases de datos SQL Server reales con pyodbc
+- Optimización de rendimiento con datos masivos (vectorización vs. loops)
 
 
 ## Proyecto destacado: Analizador de Portafolio de Inversión (clase-30 a clase-32)
@@ -27,3 +28,15 @@ Análisis cuantitativo de un portafolio compuesto por 4 acciones (AAPL, MSFT, GO
 - Visualización del crecimiento comparado de $1 invertido en cada acción
 
 **Hallazgo principal:** el portafolio combinado (25% en cada acción) tuvo una volatilidad anual de 19.43%, inferior a la de cualquier acción individual (19.9% a 28.1%), evidenciando el beneficio de diversificación incluso dentro de un mismo sector.
+
+
+## Rendimiento con datos masivos (clase-35)
+
+Comparación práctica de tres formas de procesar una columna de 500.000 filas en pandas:
+
+- Loop manual con `.iloc[]` dentro de un `for`: 25.18 segundos
+- `.apply()`: 0.15 segundos (~168 veces más rápido)
+- Vectorización pura con `np.select()`: 0.0235 segundos (~1.071 veces más rápido que el loop manual)
+
+**Conclusión:** evitar el acceso fila por fila en pandas es crítico al trabajar con datasets grandes; las operaciones vectorizadas son órdenes de magnitud más rápidas que los loops tradicionales de Python.
+
